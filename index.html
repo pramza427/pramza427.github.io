@@ -1,6 +1,6 @@
 <style>
 body{
-  height:100%;
+  width:100%;
 }
 .grad {
   background-image: linear-gradient(to bottom right, #4A16E9, #9133FF);
@@ -16,12 +16,13 @@ body{
 .center{
   width: 100%;
   height: 100%;
-  position: absolute;
   text-align: center;
-  padding-top: 30%;
 }
 h0 {
   font-size: 60px;
+}
+h1 {
+text-align: center;
 }
 .fa{
   color: white;
@@ -34,6 +35,15 @@ h0 {
 .fa:hover{
   color: gray;
   text-decoration: none;
+}
+#cardDiv{
+  margin: 0 auto;
+  width: 70%;
+}
+.card{
+  width: 20px;
+  display: inline-block;
+  margin: auto;
 }
 </style>
 
@@ -50,6 +60,7 @@ h0 {
   <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <script src="projects.js"></script>
 
 </head>
 <body>
@@ -60,27 +71,49 @@ h0 {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   <div id="Name" class="grad fullscreen light">
-    <div class="center">
+    <div class="center" style="padding-top: 40vh;">
       <div>
         <h0>Piotr Ramza</h0>
       <h4>Programmer | Maker | Photographer</h4><br>
 
       <a href="#" class="fa fa-github fa-3x"></a>
-      <a href="https://www.instagram.com/p_ramza/" class="fa fa-instagram fa-3x"></a>
       <a href="https://www.linkedin.com/in/piotrramza/" class="fa fa-linkedin fa-3x"></a>
+      <a href="https://www.instagram.com/p_ramza/" class="fa fa-instagram fa-3x"></a>
 
       </div>
       
     </div>
 
   </div>
-  <div>
-    Hello
+  <div><h1>Projects:</h1></div>
+  <div id="cardDiv" class="card-columns">
+    <div id="ogCard" class="card">
+      <img class="card-img-top" src="images/501.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link" id="Rep">Repository</a>
+        <a href="#" class="card-link" id="Website">Website</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
 
 <script>
-
-  
+  console.log(projects);
+  count = 0;
+  for(project of projects){
+    console.log(project);
+    var newCard = document.querySelector("#ogCard").cloneNode(true);
+    //newCard.querySelector(".card-img-top").src = project.Image;
+    newCard.querySelector(".card-title").innerHTML = project.Name;
+    newCard.querySelector(".card-subtitle").innerHTML = project.Tech;
+    newCard.querySelector(".card-text").innerHTML = project.Description;
+    newCard.querySelector("#Rep").href = project.Repo;
+    newCard.querySelector("#Website").href = project.Page;
+    document.querySelector("#cardDiv").appendChild(newCard);
+  }
+  document.querySelector("#ogCard").remove();
 </script>

@@ -6,7 +6,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	},
 	{
@@ -15,7 +15,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	},
 	{
@@ -24,7 +24,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	},
 	{
@@ -33,7 +33,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	},
 	{
@@ -42,7 +42,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	},
 	{
@@ -51,7 +51,7 @@ var projects =
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/Dart-Games",
 		"Page": "https://pramza427.github.io/Dart-Games/501.html",
-		"Image": "images/501.jpg",
+		"Image": "/images/501.jpg",
 		"Display": "True"
 	}
 

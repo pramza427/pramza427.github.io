@@ -11,7 +11,7 @@ var projects =
 	},
 	{
 		"Name": "Highway Rush",
-		"Description": "A sidescroller where you race down the highway avoiding other cars and picking up gas to try and get the highest score",
+		"Description": "A downloadable side scroller where you race down the highway avoiding other cars and picking up gas to try and get the highest score",
 		"Tech": "HTML, JavaScript",
 		"Repo": "https://github.com/pramza427/IT202-Spring2021-project2",
 		"Page": "https://pramza427.github.io/IT202-Spring2021-project2",

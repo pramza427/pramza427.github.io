@@ -88,7 +88,7 @@ text-align: center;
   <div><h1>Projects:</h1></div>
   <div id="cardDiv" class="card-columns">
     <div id="ogCard" class="card">
-      <img class="card-img-top" src="images/501.jpg" alt="Card image cap">
+      <img class="card-img-top" src="" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -102,12 +102,10 @@ text-align: center;
 </html>
 
 <script>
-  console.log(projects);
   count = 0;
   for(project of projects){
-    console.log(project);
     var newCard = document.querySelector("#ogCard").cloneNode(true);
-    //newCard.querySelector(".card-img-top").src = project.Image;
+    newCard.querySelector(".card-img-top").src = project.Image;
     newCard.querySelector(".card-title").innerHTML = project.Name;
     newCard.querySelector(".card-subtitle").innerHTML = project.Tech;
     newCard.querySelector(".card-text").innerHTML = project.Description;

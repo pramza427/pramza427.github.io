@@ -1,66 +1,8 @@
 <style>
-body{
-  width:100%;
-}
-.grad {
-  background-image: linear-gradient(to bottom right, #4A16E9, #9133FF);
-}
-.fullscreen {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-.light{
-  color: white;
-}
-.center{
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-h0 {
-  font-size: 60px;
-}
-h1 {
-text-align: center;
-}
-.fa{
-  color: white;
-  padding: 20px;
-  font-size: 100px;
-  width: 100px;
-  text-align: center;
-  text-decoration: none;
-}
-.fa:hover{
-  color: gray;
-  text-decoration: none;
-}
-#aboutMe{
-  background-color: #e9e9f1;
-  height: auto;
-  width: 100%;
-  display: flex;
-}
-.portrait{
-  margin: 30px;
-}
-#aboutMeText{
-  width: 100%;
-  margin: auto;
-  color: #13121c;
-}
-#cardDiv{
-  margin: 0 auto;
-  width: 70%;
-}
-.card{
-  width: 20px;
-  display: inline-block;
-  margin: auto;
-}
+  html{
+    height: 100%;
+  }
 </style>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,6 +16,10 @@ text-align: center;
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- My style sheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- json file of my projects -->
   <script src="projects.js"></script>
 
 </head>
@@ -96,24 +42,29 @@ text-align: center;
       <a href="https://www.linkedin.com/in/piotrramza/" class="fa fa-linkedin fa-3x"></a>
       <a href="https://www.instagram.com/p_ramza/" class="fa fa-instagram fa-3x"></a>
       </div>
+      <div class="floatBottom">
+        <a href="#AboutMe" id="bottomLink">
+          <i class="fa fa-arrow-down fa-1x"></i>
+        </a>
+      </div>
     </div>
   </div>
   <!---------------- FullScreen Opener End ---------------->
 
   <!---------------- About Me Start ---------------->
-  <div id="aboutMe">
+  <div id="AboutMe">
     <img src="images/Me.jpg" class="rounded-circle w-25 portrait" alt="Portrait">
     <div id="aboutMeText">
       <h2>A bit about me:</h2>
-      <h4>I’m a computer science graduate with a passion for making, whether that be physical or virtual. I enjoy tackling problems with creative solutions through exploration of new technologies. I have worked with Redmoon theater and After School Matters for multiple years creating sculptures which ranged in scale from individual projects to huge spectacles requiring hundreds of sculptures and performers.</h4>
+      <h4>I’m a computer science graduate with a passion for making, whether that be physical or virtual. I enjoy tackling problems with creative solutions through exploration of new technologies. I have worked on a multitude of projects ranging in scale from individual to working on a team with dozens of people. I love sitting down, coding, and making something new.</h4>
     </div>
   </div>
   <!---------------- About Me Start ---------------->
 
   <!---------------- Dynamic Projects Start ---------------->
-  <div><h1>Projects:</h1></div>
+  <div style="padding-top: 16px;"><h1>Past Projects:</h1></div>
   <div id="cardDiv" class="card-columns">
-    <div id="ogCard" class="card">
+    <div class="card">
       <img class="card-img-top" src="" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -131,14 +82,16 @@ text-align: center;
 <script>
   count = 0;
   for(project of projects){
-    var newCard = document.querySelector("#ogCard").cloneNode(true);
-    newCard.querySelector(".card-img-top").src = project.Image;
-    newCard.querySelector(".card-title").innerHTML = project.Name;
-    newCard.querySelector(".card-subtitle").innerHTML = project.Tech;
-    newCard.querySelector(".card-text").innerHTML = project.Description;
-    newCard.querySelector("#Rep").href = project.Repo;
-    newCard.querySelector("#Website").href = project.Page;
-    document.querySelector("#cardDiv").appendChild(newCard);
+    if(project.Display === "True"){
+      var newCard = document.querySelector(".card").cloneNode(true);
+      newCard.querySelector(".card-img-top").src = project.Image;
+      newCard.querySelector(".card-title").innerHTML = project.Name;
+      newCard.querySelector(".card-subtitle").innerHTML = project.Tech;
+      newCard.querySelector(".card-text").innerHTML = project.Description;
+      newCard.querySelector("#Rep").href = project.Repo;
+      newCard.querySelector("#Website").href = project.Page;
+      document.querySelector("#cardDiv").appendChild(newCard);
+    }
   }
-  document.querySelector("#ogCard").remove();
+  document.querySelector(".card").remove();
 </script>

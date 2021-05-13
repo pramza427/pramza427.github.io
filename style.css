@@ -13,15 +13,21 @@ body{
   color: white;
 }
 .center{
-  width: 100%;
-  height: 100%;
   text-align: center;
+}
+.contact{
+  width: 100%;
+  height: 50px;
+  background-color: #9133FF;
+  color: white;
+  padding: 16px;
+  font-size: 15px;
 }
 h0 {
   font-size: 60px;
 }
 h1 {
-text-align: center;
+  text-align: center;
 }
 .fa{
   color: white;
@@ -43,7 +49,9 @@ text-align: center;
   font-size: 50px;
 }
 .floatBottom{
-  margin-top: 35vh;
+  width: 100%;
+  position: absolute;
+  bottom: 16px;
 }
 #bottomLink{
   color: white;

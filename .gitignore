@@ -1,0 +1,5 @@
+/out/
+/.idea/
+/.shadow-cljs/
+/node_modules/
+/public/js/compiled/cljs-runtime/

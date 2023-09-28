@@ -5,11 +5,25 @@
    [resume.views :as views]
    ))
 
-(defn ^:dev/after-load mount-root []
-  (rf/clear-subscription-cache!)
-  (let [root-el (.getElementById js/document "app")]
-    (rdom/unmount-component-at-node root-el)
-    (rdom/render [views/main-panel] root-el)))
+(defn get-local-storage [key]
+  (.getItem (.-localStorage js/window) key))
 
-(defn init []
-  (mount-root))
+(rf/reg-event-db
+  ::init-dark-mode
+  (fn [db [_]]
+    (let [dark? (get-local-storage "dark")]
+      (when (= dark? "true")
+        (.classList.add (js/document.getElementById "app") "dark")
+        (assoc db :dark-mode true)))))
+
+(defn start []
+  (rdom/render [views/main-panel]
+               (. js/document (getElementById "app"))))
+
+(defn ^:export init []
+  (js/setInterval #(rf/dispatch [::inc-time]) 1000)
+  (rf/dispatch [::init-dark-mode])
+  ;; init is called ONCE when the page loads
+  ;; this is called in the index.html and must be exported
+  ;; so it is available even in :advanced release builds
+  (start))

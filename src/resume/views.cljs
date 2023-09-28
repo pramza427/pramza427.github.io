@@ -46,14 +46,6 @@
            (.classList.toggle (js/document.getElementById "app") "dark")
            (assoc db :dark-mode state))))
 
-(rf/reg-event-db
-  ::init-dark-mode
-  (fn [db [_]]
-      (let [dark? (get-local-storage "dark")]
-           (when (= dark? "true")
-                 (.classList.add (js/document.getElementById "app") "dark")
-                 (assoc db :dark-mode true)))))
-
 ;; ---------- Views ----------
 (defn top-bar []
       (let [dark-mode? @(rf/subscribe [::dark-mode?])]
@@ -147,36 +139,29 @@
             [:div "pramza427@gmail.com"]]))
 
 (defn main-panel []
-      (rc/create-class
-        {
-         :component-did-mount
-         (fn []
-             (rf/dispatch [::init-dark-mode]))
-         :render
-         (fn []
-             (let [current-tab @(rf/subscribe [::current-tab])]
-                  [:div.flex.flex-col.font-serif.bg-gray-100.dark:bg-slate-950.dark:text-gray-300.overflow-auto.scrollbar-thin
-                   {:style {:width "100vw" :height "100vh"}}
-                   [top-bar]
-                   [about-me]
-                   [:div.flex.flex-center.p-3.text-2xl
-                    [:div.flex.cursor-pointer
-                     [:div.p-1.px-4.border-b-4
-                      {:class (if (= current-tab :projects)
-                                "border-purple-800 dark:border-teal-800"
-                                "border-transparent hover:border-purple-400 dark:hover:border-teal-950")
-                       :on-click #(rf/dispatch [::set-current-tab :projects])}
-                      "Projects"]
-                     [:div.p-1.px-4.border-b-4
-                      {:class (if (= current-tab :experience)
-                                "border-purple-800 dark:border-teal-800"
-                                "border-transparent hover:border-purple-400 dark:hover:border-teal-950")
-                       :on-click #(rf/dispatch [::set-current-tab :experience])}
-                      "Experience"]]]
-                   (case current-tab
-                         :projects [cards-wrapper]
-                         :experience [experience]
-                         [cards-wrapper])
-                   [:div.flex-grow]
-                   [footer]]))}))
+  (let [current-tab @(rf/subscribe [::current-tab])]
+    [:div.flex.flex-col.font-serif.bg-gray-100.dark:bg-slate-950.dark:text-gray-300.overflow-auto.scrollbar-thin
+     {:style {:width "100vw" :height "100vh"}}
+     [top-bar]
+     [about-me]
+     [:div.flex.flex-center.p-3.text-2xl
+      [:div.flex.cursor-pointer
+       [:div.p-1.px-4.border-b-4
+        {:class (if (= current-tab :projects)
+                  "border-purple-800 dark:border-teal-800"
+                  "border-transparent hover:border-purple-400 dark:hover:border-teal-950")
+         :on-click #(rf/dispatch [::set-current-tab :projects])}
+        "Projects"]
+       [:div.p-1.px-4.border-b-4
+        {:class (if (= current-tab :experience)
+                  "border-purple-800 dark:border-teal-800"
+                  "border-transparent hover:border-purple-400 dark:hover:border-teal-950")
+         :on-click #(rf/dispatch [::set-current-tab :experience])}
+        "Experience"]]]
+     (case current-tab
+       :projects [cards-wrapper]
+       :experience [experience]
+       [cards-wrapper])
+     [:div.flex-grow]
+     [footer]]))
 

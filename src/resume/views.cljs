@@ -77,7 +77,7 @@
         [:div.w-20.h-20.rounded-full.bg-blue-500
          {:style {:min-height "20rem"
                   :min-width "20rem"}}
-         [:img.rounded-full {:src "imgs/me.jpg"}]]]
+         [:img.rounded-full {:src "public/imgs/Me.jpg"}]]]
        [:div.flex.flex-col.justify-center.w-full.md:px-10
         [:div.text-3xl.mb-4 "A Bit About Me:"]
         [:div.text-2xl

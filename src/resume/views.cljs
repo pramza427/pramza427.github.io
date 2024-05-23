@@ -4,7 +4,8 @@
     [reagent.core :as rc]))
 
 (def projects
-  [{:name "Clojure Darts Scoreboard" :img-src "public/imgs/501-cljs.jpg" :language "Clojurescript" :repo-link "https://github.com/pramza427/darts-reframe" :web-link "https://pramza427.github.io/darts-reframe/"
+  [{:name "Audio Adjuster" :img-src "" :language "Python" :repo-link "https://github.com/pramza427/keybow_pycaw" :web-link "https://github.com/pramza427/keybow_pycaw" :description "Python script that allows for quick Windows audio adjustment using a Keybow 2040"}
+   {:name "Clojure Darts Scoreboard" :img-src "public/imgs/501-cljs.jpg" :language "Clojurescript" :repo-link "https://github.com/pramza427/darts-reframe" :web-link "https://pramza427.github.io/darts-reframe/"
     :description "An improved way for users to keep track of scores in dart games. Now includes dark mode and an undo button, as well as general UI improvements. Hope to add player stat tracking soon."}
    {:name "Darts Scoreboard" :img-src "public/imgs/501.jpg" :language "HTML, Javascript" :repo-link "https://github.com/pramza427/Dart-Games" :web-link "https://pramza427.github.io/Dart-Games/501.html" :description "A quick and easy way for users to keep track of scores in dart games"}
    {:name "HighwayRush" :img-src "public/imgs/HighwayRush.jpg" :language "HTML, Javascript" :repo-link "https://github.com/pramza427/IT202-Spring2021-project2" :web-link "https://pramza427.github.io/IT202-Spring2021-project2" :description "A downloadable side scroller where you race down the highway avoiding other cars and picking up gas to try and get the highest score"}

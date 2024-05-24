@@ -4,7 +4,7 @@
     [reagent.core :as rc]))
 
 (def projects
-  [{:name "Audio Adjuster" :img-src "" :language "Python" :repo-link "https://github.com/pramza427/keybow_pycaw" :web-link "https://github.com/pramza427/keybow_pycaw" :description "Python script that allows for quick Windows audio adjustment using a Keybow 2040"}
+  [{:name "Audio Adjuster" :img-src "" :language "Python" :repo-link "https://github.com/pramza427/keybow_pycaw" :web-link "" :description "Python script that allows for quick Windows audio adjustment using a Keybow 2040"}
    {:name "Clojure Darts Scoreboard" :img-src "public/imgs/501-cljs.jpg" :language "Clojurescript" :repo-link "https://github.com/pramza427/darts-reframe" :web-link "https://pramza427.github.io/darts-reframe/"
     :description "An improved way for users to keep track of scores in dart games. Now includes dark mode and an undo button, as well as general UI improvements. Hope to add player stat tracking soon."}
    {:name "Darts Scoreboard" :img-src "public/imgs/501.jpg" :language "HTML, Javascript" :repo-link "https://github.com/pramza427/Dart-Games" :web-link "https://pramza427.github.io/Dart-Games/501.html" :description "A quick and easy way for users to keep track of scores in dart games"}
@@ -85,19 +85,22 @@
          "I’m a software developer with two years professional experience and a passion for making, whether that be physical or virtual. I enjoy tackling problems with creative solutions through exploration of new technologies. I have worked on a multitude of projects ranging in scale from individual to working on a team with dozens of people. I love sitting down, coding, and making something new."]]])
 
 (defn card [{:keys [name img-src repo-link web-link description language]}]
-      [:div.inline-block.border.rounded-lg.m-5.max-w-sm.bg-white.border-gray-300.dark:border-slate-800.dark:bg-slate-900
-       [:img.rounded-t-lg {:src img-src}]
+      [:div.inline-block.border.rounded-lg.m-5.max-w-md.bg-white.border-gray-300.dark:border-slate-800.dark:bg-slate-900
+       (when (not-empty img-src)
+         [:img.rounded-t-lg.w-full.h-full {:src img-src}])
        [:div.p-3.rounded-b-lg
         [:div.text-xl.mb-2 name]
         [:div.text description]
         [:div.text-xs.text-gray-400.mt-2.text-right (str "Languages: " language)]
         [:div.flex.w-full.justify-between.mt-3
          [:a.mx-3.text-blue-500.hover:underline {:href repo-link} "Repository"]
-         [:a.mx-3.text-blue-500.hover:underline {:href web-link} "Website"]]]])
+         (when (not-empty web-link)
+           [:a.mx-3.text-blue-500.hover:underline {:href web-link} "Website"])
+         ]]])
 
 (defn cards-wrapper []
-      [:div.flex.flex-wrap.items-center.w-full.px-20
-       [:div.lg:columns-3.md:columns-2 {:style {:orphans 1 :widows 1}}
+      [:div.flex.flex-wrap.items-center.justify-center.w-full.px-20
+       [:div.columns-1.lg:columns-2.xl:columns-3.2xl:columns-4
         (doall
           (for [project projects]
                ^{:key (:name project)}

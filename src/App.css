@@ -1,0 +1,88 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-main {
+  min-height: 100vh;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carouselContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.carousel {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.location {
+  transform-origin: center center -1500px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 1s ease-in-out;
+  
+}
+
+.hiddenLoc {
+  display: none;
+}
+
+.ariving{
+  transform: rotateY(0deg) ;
+  opacity: 1;
+}
+
+.departing.left{
+  transform: rotateY(70deg);
+  opacity: 0
+}
+
+.departing.right{
+  transform: rotateY(-70deg) ;
+  opacity: 0
+}
+
+.fa-climber::before {
+  content: url("../public/svgs/ClimberIcon.svg");
+}
+
+.dark .fa-climber::before {
+  content: url("../public/svgs/ClimberIconDark.svg");
+}
+
+@keyframes animate-skill-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

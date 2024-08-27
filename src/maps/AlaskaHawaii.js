@@ -15,7 +15,7 @@ function AlaskaHawaii(clickFunc) {
             paths.forEach((path) => {
                 const stateId = path.id;
                 path.addEventListener("click", () => {
-                  clickFunc(stateId);
+                  clickFunc(stateId, stateInfo[stateId]);
                 });
                 // Change fill color for visited states
                 if (stateInfo[stateId].visited) {

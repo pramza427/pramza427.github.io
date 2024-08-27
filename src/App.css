@@ -38,7 +38,7 @@
   width: 100%;
   height: 60vh;
   perspective: 1000px;
-  overflow: hidden;
+  
 }
 
 .location {
@@ -48,26 +48,11 @@
   height: 100%;
   backface-visibility: hidden;
   transition: all 1s ease-in-out;
-  
+
 }
 
 .hiddenLoc {
   display: none;
-}
-
-.ariving{
-  transform: rotateY(0deg) ;
-  opacity: 1;
-}
-
-.departing.left{
-  transform: rotateY(70deg);
-  opacity: 0
-}
-
-.departing.right{
-  transform: rotateY(-70deg) ;
-  opacity: 0
 }
 
 .fa-climber::before {
@@ -78,11 +63,142 @@
   content: url("../public/svgs/ClimberIconDark.svg");
 }
 
-@keyframes animate-skill-progress {
+.departing-left {
+  animation-duration: 1s;
+  animation-name: departing-left;
+  animation-fill-mode: forwards;
+}
+
+@keyframes departing-left {
   from {
-    width: 0%;
+    transform: rotateY(0deg);
+    opacity: 1;
   }
+
   to {
-    width: 100%;
+    transform: rotateY(70deg);
+    opacity: 0;
+  }
+}
+
+.departing-right {
+  animation-duration: 1s;
+  animation-name: departing-right;
+  animation-fill-mode: forwards;
+}
+
+@keyframes departing-right {
+  from {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-70deg);
+    opacity: 0;
+  }
+}
+
+.departing-up {
+  animation-duration: 1s;
+  animation-name: departing-up;
+  animation-fill-mode: forwards;
+}
+
+@keyframes departing-up {
+  from {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateX(-70deg);
+    opacity: 0;
+  }
+}
+
+.departing-down {
+  animation-duration: 1s;
+  animation-name: departing-down;
+  animation-fill-mode: forwards;
+}
+
+@keyframes departing-down {
+  from {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateX(70deg);
+    opacity: 0;
+  }
+}
+
+.ariving-left {
+  animation-duration: 1s;
+  animation-name: ariving-left;
+}
+
+@keyframes ariving-left {
+  from {
+    transform: rotateY(-70deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateY(0deg);
+    opacity: 1
+  }
+}
+
+.ariving-right {
+  animation-duration: 1s;
+  animation-name: ariving-right;
+}
+
+@keyframes ariving-right {
+  from {
+    transform: rotateY(70deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.ariving-up {
+  animation-duration: 1s;
+  animation-name: ariving-up;
+}
+
+@keyframes ariving-up {
+  from {
+    transform: rotateX(70deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.ariving-down {
+  animation-duration: 1s;
+  animation-name: ariving-down;
+}
+
+@keyframes ariving-down {
+  from {
+    transform: rotateX(-70deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
   }
 }

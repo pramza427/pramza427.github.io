@@ -3,39 +3,39 @@ import React, { useEffect, useRef } from 'react';
 
 function Usa(clickFunc) {
 
-  const statesRef = useRef(null);
+   const statesRef = useRef(null);
 
-  useEffect(() => {
-    // Set the fills of the visited states to green once on page load
-    const svgNode = statesRef.current;
-    if (svgNode) {
-      // Get all paths from the SVG
-      const paths = svgNode.querySelectorAll("path");
-
-      
-      paths.forEach((path) => {
-        const stateId = path.id;
-        path.addEventListener("click", () => {
-          clickFunc(stateId);
-        });
-        // Change fill color for visited states
-        if (stateInfo[stateId].visited) {
-          path.setAttribute("fill", "#2D6A4F");
-        }
-      });
-    }
-  });
+   useEffect(() => {
+      // Set the fills of the visited states to green once on page load
+      const svgNode = statesRef.current;
+      if (svgNode) {
+         // Get all paths from the SVG
+         const paths = svgNode.querySelectorAll("path");
 
 
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg"
-      ref={statesRef}
-      id="StatesSvg"
-      width="100%" height="100%" disable="true"
-      viewBox="0 0 1092 578">
-      <path id="Maine"
-        fill="currentColor" stroke="black" stroke-width="1"
-        d="M 1000.00,120.00
+         paths.forEach((path) => {
+            const stateId = path.id;
+            path.addEventListener("click", () => {
+               clickFunc(stateId, stateInfo[stateId]);
+            });
+            // Change fill color for visited states
+            if (stateInfo[stateId].visited) {
+               path.setAttribute("fill", "#2D6A4F");
+            }
+         });
+      }
+   });
+
+
+   return (
+      <svg xmlns="http://www.w3.org/2000/svg"
+         ref={statesRef}
+         id="StatesSvg"
+         width="100%" height="100%" disable="true"
+         viewBox="0 0 1092 578">
+         <path id="Maine"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 1000.00,120.00
        C 1000.00,120.00 1030.00,60.00 1030.00,60.00
          1030.00,60.00 1040.00,60.00 1040.00,60.00
          1040.00,60.00 1040.00,70.00 1040.00,70.00
@@ -46,9 +46,9 @@ function Usa(clickFunc) {
          1070.00,130.00 1040.00,140.00 1040.00,140.00
          1040.00,140.00 1000.00,180.00 1000.00,180.00
          1000.00,180.00 1000.00,120.00 1000.00,120.00 Z" />
-      <path id="Massachusetts"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 950.00,200.00
+         <path id="Massachusetts"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 950.00,200.00
        C 950.00,200.00 960.00,180.00 960.00,180.00
          960.00,180.00 1000.00,180.00 1000.00,180.00
          1000.00,180.00 1000.00,200.00 1000.00,200.00
@@ -56,24 +56,24 @@ function Usa(clickFunc) {
          1020.00,210.00 990.00,210.00 990.00,210.00
          990.00,210.00 990.00,200.00 990.00,200.00
          990.00,200.00 950.00,200.00 950.00,200.00 Z" />
-      <path id="Rhode Island"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 980.00,200.00
+         <path id="Rhode Island"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 980.00,200.00
        C 980.00,200.00 990.00,200.00 990.00,200.00
          990.00,200.00 990.00,210.00 990.00,210.00
          990.00,210.00 980.00,220.00 980.00,220.00
          980.00,220.00 980.00,200.00 980.00,200.00 Z" />
-      <path id="Connecticut"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 950.00,200.00
+         <path id="Connecticut"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 950.00,200.00
        C 950.00,200.00 980.00,200.00 980.00,200.00
          980.00,200.00 980.00,220.00 980.00,220.00
          980.00,220.00 960.00,220.00 960.00,220.00
          960.00,220.00 950.00,230.00 950.00,230.00
          950.00,230.00 950.00,200.00 950.00,200.00 Z" />
-      <path id="New Hampshire"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 970.00,180.00
+         <path id="New Hampshire"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 970.00,180.00
        C 970.00,180.00 1000.00,180.00 1000.00,180.00
          1000.00,180.00 1000.00,120.00 1000.00,120.00
          1000.00,120.00 990.00,120.00 990.00,120.00
@@ -81,9 +81,9 @@ function Usa(clickFunc) {
          990.00,140.00 980.00,140.00 980.00,140.00
          980.00,140.00 980.00,150.00 980.00,150.00
          980.00,150.00 970.00,180.00 970.00,180.00 Z" />
-      <path id="Vermont"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 960.00,130.00
+         <path id="Vermont"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 960.00,130.00
        C 960.00,130.00 990.00,130.00 990.00,130.00
          990.00,130.00 990.00,140.00 990.00,140.00
          990.00,140.00 980.00,140.00 980.00,140.00
@@ -91,9 +91,9 @@ function Usa(clickFunc) {
          980.00,150.00 970.00,180.00 970.00,180.00
          970.00,180.00 960.00,180.00 960.00,180.00
          960.00,180.00 960.00,130.00 960.00,130.00 Z" />
-      <path id="New York"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 840.00,190.00
+         <path id="New York"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 840.00,190.00
        C 840.00,190.00 860.00,180.00 860.00,180.00
          860.00,180.00 860.00,170.00 860.00,170.00
          860.00,170.00 900.00,170.00 900.00,170.00
@@ -107,9 +107,9 @@ function Usa(clickFunc) {
          930.00,220.00 920.00,200.00 920.00,200.00
          920.00,200.00 840.00,200.00 840.00,200.00
          840.00,200.00 840.00,190.00 840.00,190.00 Z" />
-      <path id="New Jersey"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 930.00,220.00
+         <path id="New Jersey"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 930.00,220.00
        C 930.00,220.00 950.00,230.00 950.00,230.00
          950.00,230.00 940.00,240.00 940.00,240.00
          940.00,240.00 940.00,260.00 940.00,260.00
@@ -118,9 +118,9 @@ function Usa(clickFunc) {
          920.00,260.00 920.00,250.00 920.00,250.00
          920.00,250.00 930.00,240.00 930.00,240.00
          930.00,240.00 930.00,220.00 930.00,220.00 Z" />
-      <path id="Pennsylvania"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 830.00,250.00
+         <path id="Pennsylvania"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 830.00,250.00
        C 830.00,250.00 830.00,200.00 830.00,200.00
          830.00,200.00 840.00,190.00 840.00,190.00
          840.00,190.00 840.00,200.00 840.00,200.00
@@ -129,16 +129,16 @@ function Usa(clickFunc) {
          930.00,220.00 930.00,240.00 930.00,240.00
          930.00,240.00 920.00,250.00 920.00,250.00
          920.00,250.00 830.00,250.00 830.00,250.00 Z" />
-      <path id="Delaware"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 910.00,250.00
+         <path id="Delaware"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 910.00,250.00
        C 910.00,250.00 920.00,250.00 920.00,250.00
          920.00,250.00 920.00,280.00 920.00,280.00
          920.00,280.00 910.00,280.00 910.00,280.00
          910.00,280.00 910.00,250.00 910.00,250.00 Z" />
-      <path id="Maryland"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 870.00,250.00
+         <path id="Maryland"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 870.00,250.00
        C 870.00,250.00 910.00,250.00 910.00,250.00
          910.00,250.00 910.00,280.00 910.00,280.00
          910.00,280.00 920.00,280.00 920.00,280.00
@@ -149,9 +149,9 @@ function Usa(clickFunc) {
          890.00,270.00 880.00,270.00 880.00,270.00
          880.00,270.00 870.00,261.04 870.00,261.04
          870.00,261.04 870.00,250.00 870.00,250.00 Z" />
-      <path id="West Virginia"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 790.00,280.00
+         <path id="West Virginia"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 790.00,280.00
        C 790.00,280.00 790.00,290.00 790.00,290.00
          790.00,290.00 800.00,310.00 800.00,310.00
          800.00,310.00 830.00,310.00 830.00,310.00
@@ -163,9 +163,9 @@ function Usa(clickFunc) {
          830.00,250.00 830.00,240.00 830.00,240.00
          830.00,240.00 800.00,280.00 800.00,280.00
          800.00,280.00 790.00,280.00 790.00,280.00 Z" />
-      <path id="Virginia"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 770.00,330.00
+         <path id="Virginia"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 770.00,330.00
        C 770.00,330.00 800.00,310.00 800.00,310.00
          800.00,310.00 830.00,310.00 830.00,310.00
          830.00,310.00 840.00,280.00 840.00,280.00
@@ -178,9 +178,9 @@ function Usa(clickFunc) {
          880.00,290.00 910.00,300.00 910.00,300.00
          910.00,300.00 910.00,330.00 910.00,330.00
          910.00,330.00 770.00,330.00 770.00,330.00 Z" />
-      <path id="Kentucky"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 670.00,330.00
+         <path id="Kentucky"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 670.00,330.00
        C 670.00,330.00 670.00,310.00 670.00,310.00
          670.00,310.00 680.00,310.00 680.00,310.00
          680.00,310.00 690.00,300.00 690.00,300.00
@@ -192,17 +192,17 @@ function Usa(clickFunc) {
          790.00,290.00 800.00,310.00 800.00,310.00
          800.00,310.00 770.00,330.00 770.00,330.00
          770.00,330.00 670.00,330.00 670.00,330.00 Z" />
-      <path id="Tennessee"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 810.00,330.00
+         <path id="Tennessee"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 810.00,330.00
        C 810.00,330.00 760.00,360.00 760.00,360.00
          760.00,360.00 650.00,360.00 650.00,360.00
          650.00,360.00 660.00,340.00 660.00,340.00
          660.00,340.00 670.00,330.00 670.00,330.00
          670.00,330.00 810.00,330.00 810.00,330.00 Z" />
-      <path id="North Carolina"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 860.00,390.00
+         <path id="North Carolina"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 860.00,390.00
        C 860.00,390.00 900.00,370.00 900.00,370.00
          900.00,370.00 900.00,360.00 900.00,360.00
          900.00,360.00 910.00,350.00 910.00,350.00
@@ -213,9 +213,9 @@ function Usa(clickFunc) {
          820.00,360.00 820.00,370.00 820.00,370.00
          820.00,370.00 840.00,370.00 840.00,370.00
          840.00,370.00 860.00,390.00 860.00,390.00 Z" />
-      <path id="South Carolina"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 780.00,360.00
+         <path id="South Carolina"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 780.00,360.00
        C 780.00,360.00 820.00,360.00 820.00,360.00
          820.00,360.00 820.00,370.00 820.00,370.00
          820.00,370.00 840.00,370.00 840.00,370.00
@@ -223,9 +223,9 @@ function Usa(clickFunc) {
          860.00,390.00 820.00,430.00 820.00,430.00
          820.00,430.00 770.00,370.00 770.00,370.00
          770.00,370.00 780.00,360.00 780.00,360.00 Z" />
-      <path id="Florida"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 700.00,460.00
+         <path id="Florida"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 700.00,460.00
        C 700.00,460.00 720.00,460.00 720.00,460.00
          720.00,460.00 745.07,480.00 745.07,480.00
          745.07,480.00 760.00,470.00 760.00,470.00
@@ -241,9 +241,9 @@ function Usa(clickFunc) {
          750.00,460.00 750.00,450.00 750.00,450.00
          750.00,450.00 700.00,450.00 700.00,450.00
          700.00,450.00 700.00,460.00 700.00,460.00 Z" />
-      <path id="Georgia"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 730.00,360.00
+         <path id="Georgia"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 730.00,360.00
        C 730.00,360.00 780.00,360.00 780.00,360.00
          780.00,360.00 770.00,370.00 770.00,370.00
          770.00,370.00 820.00,430.00 820.00,430.00
@@ -253,9 +253,9 @@ function Usa(clickFunc) {
          750.00,450.00 740.00,450.00 740.00,450.00
          740.00,450.00 740.00,420.00 740.00,420.00
          740.00,420.00 730.00,360.00 730.00,360.00 Z" />
-      <path id="Alabama"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 690.00,360.00
+         <path id="Alabama"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 690.00,360.00
        C 690.00,360.00 730.00,360.00 730.00,360.00
          730.00,360.00 740.00,420.00 740.00,420.00
          740.00,420.00 740.00,450.00 740.00,450.00
@@ -263,9 +263,9 @@ function Usa(clickFunc) {
          700.00,450.00 700.00,460.00 700.00,460.00
          700.00,460.00 690.00,460.00 690.00,460.00
          690.00,460.00 690.00,360.00 690.00,360.00 Z" />
-      <path id="Mississippi"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 650.00,360.00
+         <path id="Mississippi"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 650.00,360.00
        C 650.00,360.00 630.00,390.00 630.00,390.00
          630.00,390.00 630.00,440.00 630.00,440.00
          630.00,440.00 620.00,450.00 620.00,450.00
@@ -275,9 +275,9 @@ function Usa(clickFunc) {
          670.00,460.00 690.00,460.00 690.00,460.00
          690.00,460.00 690.00,360.00 690.00,360.00
          690.00,360.00 650.00,360.00 650.00,360.00 Z" />
-      <path id="Louisiana"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 580.00,410.00
+         <path id="Louisiana"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 580.00,410.00
        C 580.00,410.00 580.00,430.00 580.00,430.00
          580.00,430.00 590.00,440.00 590.00,440.00
          590.00,440.00 590.00,460.00 590.00,460.00
@@ -291,9 +291,9 @@ function Usa(clickFunc) {
          620.00,450.00 630.00,440.00 630.00,440.00
          630.00,440.00 630.00,410.00 630.00,410.00
          630.00,410.00 580.00,410.00 580.00,410.00 Z" />
-      <path id="Arkansas"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 570.00,330.00
+         <path id="Arkansas"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 570.00,330.00
        C 570.00,330.00 570.00,390.00 570.00,390.00
          570.00,390.00 580.00,390.00 580.00,390.00
          580.00,390.00 580.00,410.00 580.00,410.00
@@ -304,9 +304,9 @@ function Usa(clickFunc) {
          660.00,340.00 650.00,340.00 650.00,340.00
          650.00,340.00 650.00,330.00 650.00,330.00
          650.00,330.00 570.00,330.00 570.00,330.00 Z" />
-      <path id="Missouri"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 550.00,240.00
+         <path id="Missouri"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 550.00,240.00
        C 550.00,240.00 560.00,250.00 560.00,250.00
          560.00,250.00 570.00,270.00 570.00,270.00
          570.00,270.00 570.00,330.00 570.00,330.00
@@ -321,9 +321,9 @@ function Usa(clickFunc) {
          640.00,270.00 630.00,250.00 630.00,250.00
          630.00,250.00 630.00,240.00 630.00,240.00
          630.00,240.00 550.00,240.00 550.00,240.00 Z" />
-      <path id="Michigan"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 720.00,200.00
+         <path id="Michigan"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 720.00,200.00
        C 720.00,200.00 724.68,190.00 724.68,190.00
          724.68,190.00 720.00,160.00 720.00,160.00
          720.00,160.00 720.00,140.00 720.00,140.00
@@ -353,9 +353,9 @@ function Usa(clickFunc) {
          790.00,160.00 790.00,190.00 790.00,190.00
          790.00,190.00 780.00,200.00 780.00,200.00
          780.00,200.00 720.00,200.00 720.00,200.00 Z" />
-      <path id="Ohio"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 750.00,200.00
+         <path id="Ohio"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 750.00,200.00
        C 750.00,200.00 780.00,200.00 780.00,200.00
          780.00,200.00 790.00,210.00 790.00,210.00
          790.00,210.00 810.00,210.00 810.00,210.00
@@ -365,9 +365,9 @@ function Usa(clickFunc) {
          800.00,280.00 770.00,280.00 770.00,280.00
          770.00,280.00 750.00,270.00 750.00,270.00
          750.00,270.00 750.00,200.00 750.00,200.00 Z" />
-      <path id="Illinois"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 640.00,190.00
+         <path id="Illinois"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 640.00,190.00
        C 640.00,190.00 690.00,190.00 690.00,190.00
          690.00,190.00 700.00,210.00 700.00,210.00
          700.00,210.00 700.00,280.00 700.00,280.00
@@ -382,9 +382,9 @@ function Usa(clickFunc) {
          630.00,240.00 650.00,210.00 650.00,210.00
          650.00,210.00 650.00,200.00 650.00,200.00
          650.00,200.00 640.00,190.00 640.00,190.00 Z" />
-      <path id="Indiana"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 700.00,210.00
+         <path id="Indiana"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 700.00,210.00
        C 700.00,210.00 710.00,210.00 710.00,210.00
          710.00,210.00 720.00,200.00 720.00,200.00
          720.00,200.00 750.00,200.00 750.00,200.00
@@ -393,9 +393,9 @@ function Usa(clickFunc) {
          730.00,290.00 690.00,300.00 690.00,300.00
          690.00,300.00 700.00,280.00 700.00,280.00
          700.00,280.00 700.00,210.00 700.00,210.00 Z" />
-      <path id="Wisconsin"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 620.00,80.00
+         <path id="Wisconsin"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 620.00,80.00
        C 620.00,80.00 650.00,80.00 650.00,80.00
          650.00,80.00 650.00,90.00 650.00,90.00
          650.00,90.00 690.00,100.00 690.00,100.00
@@ -409,9 +409,9 @@ function Usa(clickFunc) {
          630.00,160.00 610.00,130.00 610.00,130.00
          610.00,130.00 610.00,100.00 610.00,100.00
          610.00,100.00 620.00,80.00 620.00,80.00 Z" />
-      <path id="Iowa"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 540.00,160.00
+         <path id="Iowa"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 540.00,160.00
        C 540.00,160.00 540.00,190.00 540.00,190.00
          540.00,190.00 550.00,240.00 550.00,240.00
          550.00,240.00 630.00,240.00 630.00,240.00
@@ -420,9 +420,9 @@ function Usa(clickFunc) {
          650.00,200.00 640.00,190.00 640.00,190.00
          640.00,190.00 630.00,160.00 630.00,160.00
          630.00,160.00 540.00,160.00 540.00,160.00 Z" />
-      <path id="Minnesota"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 530.00,20.00
+         <path id="Minnesota"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 530.00,20.00
        C 530.00,20.00 540.00,100.00 540.00,100.00
          540.00,100.00 540.00,160.00 540.00,160.00
          540.00,160.00 630.00,160.00 630.00,160.00
@@ -438,24 +438,24 @@ function Usa(clickFunc) {
          570.00,10.00 560.00,10.00 560.00,10.00
          560.00,10.00 560.00,20.00 560.00,20.00
          560.00,20.00 530.00,20.00 530.00,20.00 Z" />
-      <path id="North Dakota"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 400.00,20.00
+         <path id="North Dakota"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 400.00,20.00
        C 400.00,20.00 400.00,100.00 400.00,100.00
          400.00,100.00 540.00,100.00 540.00,100.00
          540.00,100.00 530.00,20.00 530.00,20.00
          530.00,20.00 400.00,20.00 400.00,20.00 Z" />
-      <path id="South Dakota"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 540.00,190.00
+         <path id="South Dakota"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 540.00,190.00
        C 540.00,190.00 540.00,100.00 540.00,100.00
          540.00,100.00 400.00,100.00 400.00,100.00
          400.00,100.00 400.00,180.00 400.00,180.00
          400.00,180.00 530.00,180.00 530.00,180.00
          530.00,180.00 540.00,190.00 540.00,190.00 Z" />
-      <path id="Nebraska"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 400.00,180.00
+         <path id="Nebraska"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 400.00,180.00
        C 400.00,180.00 400.00,220.00 400.00,220.00
          400.00,220.00 440.00,220.00 440.00,220.00
          440.00,220.00 440.00,250.00 440.00,250.00
@@ -464,17 +464,17 @@ function Usa(clickFunc) {
          550.00,240.00 540.00,190.00 540.00,190.00
          540.00,190.00 530.00,180.00 530.00,180.00
          530.00,180.00 400.00,180.00 400.00,180.00 Z" />
-      <path id="Kansas"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 440.00,250.00
+         <path id="Kansas"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 440.00,250.00
        C 440.00,250.00 440.00,320.00 440.00,320.00
          440.00,320.00 570.00,320.00 570.00,320.00
          570.00,320.00 570.00,270.00 570.00,270.00
          570.00,270.00 560.00,250.00 560.00,250.00
          560.00,250.00 440.00,250.00 440.00,250.00 Z" />
-      <path id="Oklahoma"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 420.00,320.00
+         <path id="Oklahoma"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 420.00,320.00
        C 420.00,320.00 570.00,320.00 570.00,320.00
          570.00,320.00 570.00,390.00 570.00,390.00
          570.00,390.00 530.00,390.00 530.00,390.00
@@ -482,9 +482,9 @@ function Usa(clickFunc) {
          470.00,370.00 470.00,330.00 470.00,330.00
          470.00,330.00 420.00,330.00 420.00,330.00
          420.00,330.00 420.00,320.00 420.00,320.00 Z" />
-      <path id="Texas"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 420.00,330.00
+         <path id="Texas"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 420.00,330.00
        C 420.00,330.00 470.00,330.00 470.00,330.00
          470.00,330.00 470.00,370.00 470.00,370.00
          470.00,370.00 530.00,390.00 530.00,390.00
@@ -506,9 +506,9 @@ function Usa(clickFunc) {
          350.00,430.00 350.00,420.50 350.00,420.50
          350.00,420.50 420.25,420.12 420.25,420.12
          420.25,420.12 420.00,330.00 420.00,330.00 Z" />
-      <path id="New Mexico"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 310.00,320.00
+         <path id="New Mexico"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 310.00,320.00
        C 310.00,320.00 420.00,320.00 420.00,320.00
          420.00,320.00 420.00,420.00 420.00,420.00
          420.00,420.00 350.00,420.00 350.00,420.00
@@ -517,9 +517,9 @@ function Usa(clickFunc) {
          330.00,430.00 330.00,440.00 330.00,440.00
          330.00,440.00 310.00,440.00 310.00,440.00
          310.00,440.00 310.00,320.00 310.00,320.00 Z" />
-      <path id="Arizona"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 220.00,320.00
+         <path id="Arizona"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 220.00,320.00
        C 220.00,320.00 310.00,320.00 310.00,320.00
          310.00,320.00 310.00,440.00 310.00,440.00
          310.00,440.00 270.00,440.00 270.00,440.00
@@ -527,9 +527,9 @@ function Usa(clickFunc) {
          210.00,420.00 210.00,340.00 210.00,340.00
          210.00,340.00 220.00,340.00 220.00,340.00
          220.00,340.00 220.00,320.00 220.00,320.00 Z" />
-      <path id="California"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 110.00,200.00
+         <path id="California"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 110.00,200.00
        C 110.00,200.00 30.00,200.00 30.00,200.00
          30.00,200.00 30.00,240.00 30.00,240.00
          30.00,240.00 100.00,370.00 100.00,370.00
@@ -538,41 +538,41 @@ function Usa(clickFunc) {
          210.00,410.00 210.00,360.00 210.00,360.00
          210.00,360.00 110.00,270.00 110.00,270.00
          110.00,270.00 110.00,200.00 110.00,200.00 Z" />
-      <path id="Nevada"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 110.00,200.00
+         <path id="Nevada"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 110.00,200.00
        C 110.00,200.00 220.00,200.00 220.00,200.00
          220.00,200.00 220.00,340.00 220.00,340.00
          220.00,340.00 210.00,340.00 210.00,340.00
          210.00,340.00 210.00,360.00 210.00,360.00
          210.00,360.00 110.00,270.00 110.00,270.00
          110.00,270.00 110.00,200.00 110.00,200.00 Z" />
-      <path id="Colorado"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 310.00,220.00
+         <path id="Colorado"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 310.00,220.00
        C 310.00,220.00 310.00,320.00 310.00,320.00
          310.00,320.00 440.00,320.00 440.00,320.00
          440.00,320.00 440.00,220.00 440.00,220.00
          440.00,220.00 310.00,220.00 310.00,220.00 Z" />
-      <path id="Utah"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 220.00,200.00
+         <path id="Utah"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 220.00,200.00
        C 220.00,200.00 270.00,200.00 270.00,200.00
          270.00,200.00 270.00,220.00 270.00,220.00
          270.00,220.00 310.00,220.00 310.00,220.00
          310.00,220.00 310.00,320.00 310.00,320.00
          310.00,320.00 220.00,320.00 220.00,320.00
          220.00,320.00 220.00,200.00 220.00,200.00 Z" />
-      <path id="Wyoming"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 270.00,130.00
+         <path id="Wyoming"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 270.00,130.00
        C 270.00,130.00 270.00,220.00 270.00,220.00
          270.00,220.00 400.00,220.00 400.00,220.00
          400.00,220.00 400.00,130.00 400.00,130.00
          400.00,130.00 270.00,130.00 270.00,130.00 Z" />
-      <path id="Montana"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 180.00,20.00
+         <path id="Montana"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 180.00,20.00
        C 180.00,20.00 400.00,20.00 400.00,20.00
          400.00,20.00 400.00,130.00 400.00,130.00
          400.00,130.00 270.00,130.00 270.00,130.00
@@ -583,9 +583,9 @@ function Usa(clickFunc) {
          210.00,120.00 210.00,90.00 210.00,90.00
          210.00,90.00 180.00,50.00 180.00,50.00
          180.00,50.00 180.00,20.00 180.00,20.00 Z" />
-      <path id="Idaho"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 160.00,20.00
+         <path id="Idaho"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 160.00,20.00
        C 160.00,20.00 180.00,20.00 180.00,20.00
          180.00,20.00 180.00,50.00 180.00,50.00
          180.00,50.00 210.00,90.00 210.00,90.00
@@ -599,9 +599,9 @@ function Usa(clickFunc) {
          160.00,140.00 170.00,110.00 170.00,110.00
          170.00,110.00 160.00,100.00 160.00,100.00
          160.00,100.00 160.00,20.00 160.00,20.00 Z" />
-      <path id="Oregon"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 40.00,90.00
+         <path id="Oregon"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 40.00,90.00
        C 40.00,90.00 60.00,90.00 60.00,90.00
          60.00,90.00 60.00,110.00 60.00,110.00
          60.00,110.00 130.00,100.00 130.00,100.00
@@ -613,9 +613,9 @@ function Usa(clickFunc) {
          30.00,200.00 30.00,170.00 30.00,170.00
          30.00,170.00 40.00,140.00 40.00,140.00
          40.00,140.00 40.00,90.00 40.00,90.00 Z" />
-      <path id="Washington"
-         fill="currentColor" stroke="black" stroke-width="1"
-        d="M 60.00,20.00
+         <path id="Washington"
+            fill="currentColor" stroke="black" stroke-width="1"
+            d="M 60.00,20.00
        C 60.00,20.00 160.00,20.00 160.00,20.00
          160.00,20.00 160.00,100.00 160.00,100.00
          160.00,100.00 130.00,100.00 130.00,100.00
@@ -625,8 +625,8 @@ function Usa(clickFunc) {
          40.00,90.00 30.00,40.00 30.00,40.00
          30.00,40.00 60.00,40.00 60.00,40.00
          60.00,40.00 60.00,20.00 60.00,20.00 Z" />
-    </svg>
-  );
+      </svg>
+   );
 }
 
 export default Usa;

@@ -123,8 +123,6 @@ function App() {
 
         {mainContent}
 
-        <div className='flex-grow' />
-
         <footer className='flex p-2 text-white items-center justify-center bg-mint-700 dark:bg-mint-900'>
           <div className='select-none'>
             Contact me at:

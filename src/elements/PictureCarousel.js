@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function PictureCarousel({ imgObj }) {
-
+    
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            const key = e.keyCode;
+            if(key === 37 || key === 65){
+                prevPic();
+            }
+            else if(key === 39 || key === 68){
+                nextPic();
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+    })
 
     const nextPic = () => {
         (currentIndex === imgObj.length - 1)
@@ -34,12 +52,12 @@ function PictureCarousel({ imgObj }) {
             {
                 imgObj.length > 1
                     ? <div>
-                        <div className="absolute flex justify-center items-center left-0 top-0 h-full w-32 hover:bg-gradient-to-r hover:from-gray-100 from-transparent ease-in-out delay-150"
+                        <div className="absolute flex justify-center items-center left-0 top-0 h-full w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-r from-gray-100 dark:from-mint-950 bg-none"
                             onClick={prevPic}>
                             <i className="fa-solid fa-4x fa-chevron-left"></i>
                         </div>
 
-                        <div className="absolute flex justify-center items-center right-0 top-0 h-full w-32 hover:bg-gradient-to-l from-gray-100 dark:from-mint-950 bg-none transition-all duration-1000"
+                        <div className="absolute flex justify-center items-center right-0 top-0 h-full w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-l from-gray-100 dark:from-mint-950 bg-none"
                             onClick={nextPic}>
                             <i className="fa-solid fa-4x fa-chevron-right"></i>
                         </div>

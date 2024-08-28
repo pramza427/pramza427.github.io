@@ -18,7 +18,6 @@ function Europe(clickFunc) {
           clickFunc(stateId, europeInfo[stateId]);
         });
         // Change fill color for visited states
-        console.log(stateId)
         if (europeInfo[stateId].visited) {
           path.setAttribute("fill", "#2D6A4F");
         }

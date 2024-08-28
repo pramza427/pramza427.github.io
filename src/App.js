@@ -12,18 +12,12 @@ function App() {
   // set isDark when loading browser
   useEffect(() => {
     var dark = localStorage.getItem("isDark");
-    dark = dark ?? true;
-    if (dark === true) {
-      document.getElementById("root").classList.add("dark");
-    }
-    else {
-      document.getElementById("root").classList.remove("dark");
-    }
-    setIsDark(dark)
+    dark = dark === "true" ? true : false
+    setDisplayMode(dark);
   }, []);
 
   function setDisplayMode(bool) {
-    if (bool === true) {
+    if (bool) {
       document.getElementById("root").classList.add("dark");
     }
     else {

@@ -194,10 +194,10 @@ function AdventurePage() {
     }
 
     return (
-        <div className="flex flex-grow flex-col 2xl:flex-row overflow-hidden">
+        <div className="flex sm:flex-grow flex-col 2xl:flex-row overflow-hidden">
             <div className="w-full 2xl:w-1/2 text-center">
                 <div className="my-5 text-3xl font-bold">{locations[currentIndex].name}</div>
-                <div className="mb-5 carouselContainer py-20">
+                <div className="mb-5 carouselContainer sm:py-20">
                     <div className="carousel text-gray-400 dark:text-gray-500">
                         {locations.map((loc, index) => (
                             <div className={getLocationClass(index)} >

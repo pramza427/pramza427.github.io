@@ -54,76 +54,62 @@ function App() {
       mainContent = <AboutPage />;
   }
 
-  var prevScrollpos = window.scrollY;
-  window.onscroll = function () {
-    var currentScrollPos = window.scrollY;
-    var currentSize = window.outerWidth;
-    if (currentSize <= 640) {
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-      } else {
-        document.getElementById("navbar").style.top = "-50px";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-    else {
-      document.getElementById("navbar").style.top = "0";
-    }
 
-  }
 
   return (
-    <div className="bg-gray-100 dark:bg-mint-950 text-sm md:text-xl ">
+    <div className="bg-gray-100 dark:bg-mint-950 text-sm md:text-xl">
       <main className='App-main text-black dark:text-white flex flex-col'>
-        <nav id="navbar" className='z-10 w-full text-xs md:text-2xl text-center bg-mint-800 text-mint-100 sticky top-0 md:bg-opacity-70 backdrop-blur-[18px] duration-300'>
-          <div className='flex justify-center items-center '>
+        <nav id="navbar" className='z-10 w-full h-min text-xs sm:text-base md:text-xl text-center bg-mint-800 text-mint-100 fixed bottom-0 sm:top-0 md:bg-opacity-70 backdrop-blur-[18px] duration-300'>
+          <div className='flex justify-between items-center container m-auto'>
             <div className='px-5 py-3 font-bold hidden md:block'>Portfolio</div>
-            <div className='flex-grow' />
-            <div className={page === Pages.ABOUT
-              ? "p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
-              : "p-1 md:p-3 cursor-pointer hover:text-mint-500"}
-              onClick={() => setPage(Pages.ABOUT)}>
-              <i className='fas fa-user' />
-              <div className='text-base'>About Me</div>
-            </div>
-            <div className={page === Pages.PROJECTS
-              ? "p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
-              : "p-1 md:p-3 cursor-pointer hover:text-mint-500"}
-              onClick={() => setPage(Pages.PROJECTS)}>
-              <i className='fas fa-code' />
-              <div className='text-base'>Projects</div>
-            </div>
-            <div className={page === Pages.EXPERIENCE
-              ? "p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
-              : "p-1 md:p-3 cursor-pointer hover:text-mint-500"}
-              onClick={() => setPage(Pages.EXPERIENCE)}>
-              <i className='fas fa-file-lines' />
-              <div className='text-base'>Experience</div>
-            </div>
-            <div className={page === Pages.ADVENTURES
-              ? "p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
-              : "p-1 md:p-3 cursor-pointer hover:text-mint-500"}
-              onClick={() => setPage(Pages.ADVENTURES)}>
-              <i className='fas fa-earth-americas' />
-              <div className='text-base'>Adventures</div>
-            </div>
-            <div className='flex-grow' />
-            <div className='mx-5 p-1 md:p-3 right-10 top-10 md:block cursor-pointer hover:text-mint-500'
-              onClick={() => setDisplayMode(!isDark)}>
-              {isDark === true ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+            <div className='flex w-full lg:w-2/3 items-center'>
+              <div className={page === Pages.ABOUT
+                ? "flex-1 p-1 md:p-3 text-mint-400 border-b-4 border-mint-500"
+                : "flex-1 p-1 md:p-3 cursor-pointer hover:text-mint-500"}
+                onClick={() => setPage(Pages.ABOUT)}>
+                <i className='fas fa-user' />
+                <div className=''>About Me</div>
+              </div>
+              <div className={page === Pages.PROJECTS
+                ? "flex-1 p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
+                : "flex-1 p-1 md:p-3 cursor-pointer hover:text-mint-500"}
+                onClick={() => setPage(Pages.PROJECTS)}>
+                <i className='fas fa-code' />
+                <div className=''>Projects</div>
+              </div>
+              <div className={page === Pages.EXPERIENCE
+                ? "flex-1 p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
+                : "flex-1 p-1 md:p-3 cursor-pointer hover:text-mint-500"}
+                onClick={() => setPage(Pages.EXPERIENCE)}>
+                <i className='fas fa-file-lines' />
+                <div className=''>Experience</div>
+              </div>
+              <div className={page === Pages.ADVENTURES
+                ? "flex-1 p-1 md:p-3 text-mint-400 border-b-4 border-mint-500 "
+                : "flex-1 p-1 md:p-3 cursor-pointer hover:text-mint-500"}
+                onClick={() => setPage(Pages.ADVENTURES)}>
+                <i className='fas fa-earth-americas' />
+                <div className=''>Adventures</div>
+              </div>
+              <div className='flex-1 p-1 md:p-3 right-10 top-10 md:block cursor-pointer hover:text-mint-500'
+                onClick={() => setDisplayMode(!isDark)}>
+                {isDark === true ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+              </div>
             </div>
           </div>
         </nav>
 
-        {mainContent}
+        <div className='sm:pt-16 flex-grow'>
+          {mainContent}
+        </div>
 
-        <footer className='flex p-2 text-white items-center justify-center bg-mint-700 dark:bg-mint-900'>
-          <div className='select-none'>
+        <footer className='mb-10 sm:mb-0 p-2 text-white text-center justify-center bg-mint-700 dark:bg-mint-900'>
+          <span className='select-none'>
             Contact me at:
-          </div>
-          <div className='px-3'>
+          </span>
+          <span className='px-3'>
             pramza427@gmail.com
-          </div>
+          </span>
         </footer>
       </main>
     </div>

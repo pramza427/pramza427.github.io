@@ -33,7 +33,7 @@ function ProjectPage() {
     })
 
     return (
-        <div className="container my-10 mx-auto columns-1 lg:columns-2 2xl:columns-3">
+        <div className="container sm:py-10 mx-auto columns-1 lg:columns-2 2xl:columns-3">
             {projectBlocks}
         </div>
     );

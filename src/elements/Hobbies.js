@@ -31,7 +31,7 @@ function Hobbies() {
 
     return (
         <div id="hobbies" className="">
-            <div className="m-3 text-2xl text-center font-bold">
+            <div className="m-3 text-base md:text-2xl text-center font-bold">
                 Hobbies
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">

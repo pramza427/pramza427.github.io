@@ -63,30 +63,30 @@ function AdventurePage() {
         return (
             <div>
                 {a.a[DIRECTIONS.LEFT] != null
-                    ? <button className="absolute left-10 top-1/2"
+                    ? <button className="absolute left-5 top-1/2 h-8 w-8 md:h-20 md:w-20 bg-mint-700 bg-opacity-50 rounded-full"
                         onClick={() => setNextLoc(a.a[DIRECTIONS.LEFT], DIRECTIONS.LEFT)}>
-                        <i className="fa-solid fa-4x fa-chevron-left"></i>
+                        <i className="fa-solid text-md md:text-4xl fa-chevron-left"></i>
                     </button>
                     : <div />}
 
                 {a.a[DIRECTIONS.RIGHT] != null
-                    ? <button className="absolute right-10 top-1/2"
+                    ? <button className="absolute right-5 top-1/2 h-8 w-8 md:h-20 md:w-20 bg-mint-700 bg-opacity-50 rounded-full"
                         onClick={() => setNextLoc(a.a[DIRECTIONS.RIGHT], DIRECTIONS.RIGHT)}>
-                        <i className="fa-solid fa-4x fa-chevron-right"></i>
+                        <i className="fa-solid text-md md:text-4xl fa-chevron-right"></i>
 
                     </button> : <div />}
 
                 {a.a[DIRECTIONS.UP] != null
-                    ? <button className="absolute top-0 right-1/2"
+                    ? <button className="absolute top-0 right-1/2 h-8 w-8 md:h-20 md:w-20 bg-mint-700 bg-opacity-50 rounded-full"
                         onClick={() => setNextLoc(a.a[DIRECTIONS.UP], DIRECTIONS.UP)}>
-                        <i className="fa-solid fa-4x fa-chevron-up"></i>
+                        <i className="fa-solid text-md md:text-4xl fa-chevron-up"></i>
                     </button>
                     : <div />}
 
                 {a.a[DIRECTIONS.DOWN] != null
-                    ? <button className="absolute bottom-0 right-1/2"
+                    ? <button className="absolute bottom-0 right-1/2 h-8 w-8 md:h-20 md:w-20 bg-mint-700 bg-opacity-50 rounded-full"
                         onClick={() => setNextLoc(a.a[DIRECTIONS.DOWN], DIRECTIONS.DOWN)}>
-                        <i className="fa-solid fa-4x fa-chevron-down"></i>
+                        <i className="fa-solid text-md md:text-4xl fa-chevron-down"></i>
                     </button>
                     : <div />}
             </div>
@@ -113,10 +113,10 @@ function AdventurePage() {
                 directionClass = "";
         }
         if (index === currentIndex) {
-            arivingClass = "ariving" + "-" + directionClass;
+            arivingClass = "ariving-" + directionClass;
         }
         else if (index === lastIndex) {
-            arivingClass = "departing" + "-" + directionClass;
+            arivingClass = "departing-" + directionClass;
         }
         else {
             arivingClass = "hiddenLoc"
@@ -194,10 +194,10 @@ function AdventurePage() {
     }
 
     return (
-        <div className="flex sm:flex-grow flex-col 2xl:flex-row overflow-hidden">
+        <div className="flex flex-grow flex-col 2xl:flex-row overflow-hidden">
             <div className="w-full 2xl:w-1/2 text-center">
                 <div className="my-5 text-3xl font-bold">{locations[currentIndex].name}</div>
-                <div className="mb-5 carouselContainer sm:py-20">
+                <div className="mb-5 carouselContainer sm:py-20 max-h-auto max-h-1/2 sm:max-h-full">
                     <div className="carousel text-gray-400 dark:text-gray-500">
                         {locations.map((loc, index) => (
                             <div className={getLocationClass(index)} >

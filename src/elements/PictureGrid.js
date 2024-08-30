@@ -1,6 +1,5 @@
 function PictureGrid({imgObj}) {
-    console.log(imgObj)
-
+ 
     return (
         <div className="container mx-auto mb-10 w-full 2xl:w-1/2 text-center">
             <div className="carouselContainer">

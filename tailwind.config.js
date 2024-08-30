@@ -4,6 +4,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
+      maxHeight: {
+        '1/2': '50vh',
+        '1/3': '33vh'
+      },
       colors: {
         mint: {
           100: '#D8F3DC',

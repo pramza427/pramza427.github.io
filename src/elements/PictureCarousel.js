@@ -40,8 +40,8 @@ function PictureCarousel({ imgObj }) {
                 {imgObj.map((img, idx) => (
                     <div key={idx} className={(idx === currentIndex) ? "w-full h-full block" : "w-full hidden"}>
                         <img alt={"Favorite " + idx} src={img.url} className="object-scale-down w-full h-full" />
-                        <div className="absolute flex justify-center w-full -bottom-8 md:bottom-10 font-bold">
-                            <div className="bg-mint-500 p-1 px-2 rounded-full">
+                        <div className="absolute -bottom-8 flex justify-center w-full md:bottom-12 font-bold">
+                            <div className="bg-mint-500 p-1 px-2 text-xs md:text-xl rounded-full">
                                 {img.location}
                             </div>
                         </div>
@@ -52,14 +52,14 @@ function PictureCarousel({ imgObj }) {
             {
                 imgObj.length > 1
                     ? <div>
-                        <div className="absolute flex justify-center items-center left-0 top-0 h-full w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-r from-gray-100 dark:from-mint-950 bg-none"
+                        <div className="absolute flex justify-center items-center left-0 top-0 h-full w-16 sm:w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-r from-gray-100 dark:from-mint-950 bg-none"
                             onClick={prevPic}>
-                            <i className="fa-solid fa-4x fa-chevron-left"></i>
+                            <i className="fa-solid text-sm md:text-4xl fa-chevron-left"></i>
                         </div>
 
-                        <div className="absolute flex justify-center items-center right-0 top-0 h-full w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-l from-gray-100 dark:from-mint-950 bg-none"
+                        <div className="absolute flex justify-center items-center right-0 top-0 h-full w-16 sm:w-32 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gradient-to-l from-gray-100 dark:from-mint-950 bg-none"
                             onClick={nextPic}>
-                            <i className="fa-solid fa-4x fa-chevron-right"></i>
+                            <i className="fa-solid text-sm md:text-4xl fa-chevron-right"></i>
                         </div>
 
                         <div className="absolute bottom-2 w-full flex justify-center">

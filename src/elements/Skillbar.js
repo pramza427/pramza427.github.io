@@ -30,17 +30,17 @@ const SkillBar = () => {
 
   return (
     <div className="container mx-auto my-10">
-      <h2 className="m-3 text-2xl text-center font-bold">Development Skills</h2>
+      <h2 className="m-3 text-base md:text-2xl text-center font-bold">Development Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" ref={skillContainerRef}>
         {skills.map((skill, index) => (
           <div key={index} className="p-4 bg-mint-100 dark:bg-mint-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-green-950">
             <div className="flex items-center justify-between">
-              <h4 className="text-lg font-medium">{skill.name}</h4>
-              <div className="w-1/2 h-4 bg-white dark:bg-mint-950 rounded-full" aria-label={`${skill.name} proficiency`}>
-                <div className="bg-mint-700 dark:bg-mint-600 h-4 rounded-full" style={{ width: '0%' }} />
+              <h4 className="text-sm md:text-lg font-medium">{skill.name}</h4>
+              <div className="w-1/2 h-3 md:h-4 bg-white dark:bg-mint-950 rounded-full" aria-label={`${skill.name} proficiency`}>
+                <div className="bg-mint-700 dark:bg-mint-600 h-3 md:h-4 rounded-full" style={{ width: '0%' }} />
               </div>
             </div>
-            <div className="text-sm mt-2">{skill.proficiency} years of experience</div>
+            <div className="text-xs md:text-sm mt-2">{skill.proficiency} years of experience</div>
           </div>
         ))}
       </div>

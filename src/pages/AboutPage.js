@@ -34,7 +34,10 @@ function AboutPage() {
 
                     <div className="p-5 flex flex-col items-center">
                         <div className="pb-5 md:pb-10 text-base md:text-2xl">
-                            I’m a software developer with two years professional experience and a passion for making, whether that be physical or virtual. I enjoy tackling problems with creative solutions through exploration of new technologies. I have worked on a multitude of projects ranging in scale from individual to working on a team with dozens of people. I love sitting down, coding, and making something new.
+                            I’m a software developer with four years professional experience and a passion for making, 
+                            whether that be physical or virtual. I enjoy tackling problems with creative solutions through the
+                            exploration of new technologies. I have worked on a a variety projects ranging in scale
+                            from individual to working on a team with dozens of people. I love sitting down, coding, and making something new.
                         </div>
                         <div id="favorites" className="w-full m-3 rounded">
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-y-5 md:gap-y-10">

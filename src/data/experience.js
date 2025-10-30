@@ -1,10 +1,25 @@
 export const experience = [
     {
+        position: "Full-Stack Engineer and Front-End Lead",
+        company: "Diderot",
+        using: ["React", "Typescript", "Python", "Node.js"],
+        location: "Chicago, IL",
+        date: "October 2024 - Present",
+        summary: "Took full ownership of the front end repo while leading a team of two to develop Diderot from concept to fully functional web application",
+        bulletpoints: [
+            "Designed a full suite of React.js UI components to improve productivity and throughput by 50%.",
+            "Created and implemented a variety of Python APIs and SQL queries with a focus on documentation and maintainability. ",
+            "Conceptualized a Route ->  Controller -> Query file architecture to improve maintainability and test-ability",
+            "Expanded web-socket functionality for full bi-directional client-server communication by introducing multi-threading",
+            "Revamped existing APIs and SQL queries to improve performance by up to 300%"
+        ]
+    },
+    {
         position: "Software Developer",
         company: "Data Annotations",
         using: ["Python", "Javascript", "C++"],
         location: "Chicago, IL",
-        date: "March 2024 - Present",
+        date: "March 2024 - October 2024",
         summary: "",
         bulletpoints: [
             "Test complex AI model responses against technical and professional criteria to ensure correctness and prevent harmful content.",
